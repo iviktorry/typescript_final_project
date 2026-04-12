@@ -1,34 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
     <main class="wrapper">
+        <div class="container">
+            <h1>Quick Quiz</h1>
 
-        <h1>Quiz about js</h1>
+            <div class="question" id="question-text">
+                <h3>
+                    Lorem ipsum dolor sit  omnis accusamus quos recusandae
+                </h3>
+            </div>
 
-        <div class="question">
-            <h3>Question</h3>
-        </div>
+            <div class="answers grid-container" id="answer-buttons">
+            <button class="item">
+                Lorem ipsum dolor, sit Quam
+            </button>
+            <button class="item">
+                Lorem ipsum dolor sit Adipisci
+            </button>
+            <button class="item">
+                Lorem ipsum dolor sit Magni,
+            </button>
+            <button class="item">
+                Lorem ipsum dolor, sit Blanditiis
+            </button>
+            </div>
 
-        <div class="progress">
-            <p>l</p>
-        </div>
-
-        <div class="answers grid-container ">
-            <button class="item">1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam eveniet ipsam nihil modi non eligendi earum maxime maiores, minima natus! Facilis et eligendi beatae vitae totam obcaecati. Doloribus, similique aperiam!</button>
-            <button class="item">2</button> 
-            <button class="item">3</button>
-            <button class="item">4</button> 
-        </div>
-        
-        <div class="complete">
-            <h3>1/10</h3>   
+            <div class="complete">
+                <div class="progress">
+                    <select id="question-option">
+                    <option value="1">1/10</option>
+                    <option value="2">2/10</option>
+                    <option value="3">3/10</option>
+                    <option value="4">4/10</option>
+                    <option value="5">5/10</option>
+                    <option value="6">6/10</option>
+                    <option value="7">7/10</option>
+                    <option value="8">8/10</option>
+                    <option value="9">9/10</option>
+                    <option value="10">10/10</option>
+                    </select>
+                </div>
+                <button id="submit-button">Next</button>
+            </div>
         </div>
     </main>
-</body>
+  </body>
 </html>
