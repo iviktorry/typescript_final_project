@@ -65,9 +65,15 @@ body {
   transform: scale(0.95);
 }
 
-.grid-container .item:hover,
-.complete button:hover {
+/* testing colors */
+.grid-container .item:hover:not([disabled]),
+.complete button:hover,
+.progress select:hover {
   background: #eeeeee;
+}
+
+.grid-container .item:disabled {
+  cursor: no-drop;
 }
 
 .complete {
@@ -84,11 +90,21 @@ body {
   border: 0.7px solid #858585;
   font-size: 1rem;
   cursor: pointer;
-  background: #2d2c2c;
-  color: #e1e1e1;
+  /* background: #2d2c2c;
+  color: #e1e1e1; */
+  color: #2d2c2c;
+  background: #e1e1e1;
 }
 
-.complete button:hover,
+/* .complete button:hover,
 .progress select:hover {
   background: #000000;
+} */
+
+.grid-container .item.correct {
+  background: #5db05d;
+}
+
+.grid-container .item.incorrect {
+  background: #c95353;
 }

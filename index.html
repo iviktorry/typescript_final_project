@@ -5,51 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js" defer></script>
   </head>
   <body>
     <main class="wrapper">
-        <div class="container">
-            <h1>Quick Quiz</h1>
+      <div class="container">
+        <h1>Quick Quiz</h1>
 
-            <div class="question" id="question-text">
-                <h3>
-                    Lorem ipsum dolor sit  omnis accusamus quos recusandae
-                </h3>
-            </div>
-
-            <div class="answers grid-container" id="answer-buttons">
-            <button class="item">
-                Lorem ipsum dolor, sit Quam
-            </button>
-            <button class="item">
-                Lorem ipsum dolor sit Adipisci
-            </button>
-            <button class="item">
-                Lorem ipsum dolor sit Magni,
-            </button>
-            <button class="item">
-                Lorem ipsum dolor, sit Blanditiis
-            </button>
-            </div>
-
-            <div class="complete">
-                <div class="progress">
-                    <select id="question-option">
-                    <option value="1">1/10</option>
-                    <option value="2">2/10</option>
-                    <option value="3">3/10</option>
-                    <option value="4">4/10</option>
-                    <option value="5">5/10</option>
-                    <option value="6">6/10</option>
-                    <option value="7">7/10</option>
-                    <option value="8">8/10</option>
-                    <option value="9">9/10</option>
-                    <option value="10">10/10</option>
-                    </select>
-                </div>
-                <button id="submit-button">Next</button>
-            </div>
+        <div class="question" id="question-text">
+          <h3>Lorem ipsum dolor sit omnis accusamus quos recusandae</h3>
         </div>
+
+        <div class="grid-container" id="answer-buttons">
+          <button class="item">Lorem ipsum dolor, sit Quam</button>
+          <button class="item">Lorem ipsum dolor sit Adipisci</button>
+          <button class="item">Lorem ipsum dolor sit Magni,</button>
+          <button class="item">Lorem ipsum dolor, sit Blanditiis</button>
+        </div>
+
+        <div class="complete">
+          <div class="progress">
+            <select id="question-select">
+              <option value="1">1/10</option>
+              <option value="2">2/10</option>
+              <option value="3">3/10</option>
+              <option value="4">4/10</option>
+              <option value="5">5/10</option>
+              <option value="6">6/10</option>
+              <option value="7">7/10</option>
+              <option value="8">8/10</option>
+              <option value="9">9/10</option>
+              <option value="10">10/10</option>
+            </select>
+          </div>
+          <button id="next-button">Next</button>
+        </div>
+      </div>
     </main>
   </body>
 </html>
