@@ -49,15 +49,16 @@ body {
 
 .grid-container .item {
   text-align: left;
-  background-color: #e1e1e1;
-  border: 0.5px solid #858585;
   border-radius: 0.3rem;
-  cursor: pointer;
-  padding: 0.7rem 1rem;
-  transition: all 300ms ease;
-  color: #000000;
   font-size: 1rem;
+  padding: 0.7rem 1rem;
   line-height: 120%;
+  background-color: #e1e1e1;
+  border: 0.5px solid #9c9c9c;
+  color: #000000;
+  transition: all 300ms ease;
+  box-shadow: inset 0 0 0 0px black;
+  cursor: pointer;
 }
 
 .grid-container .item:active,
@@ -65,11 +66,14 @@ body {
   transform: scale(0.95);
 }
 
-/* testing colors */
 .grid-container .item:hover:not([disabled]),
 .complete button:hover,
 .progress select:hover {
-  background: #eeeeee;
+  box-shadow: inset 0 0 0 0.7px black;
+}
+
+.grid-container .item.selected {
+  box-shadow: inset 0 0 0 1px black !important;
 }
 
 .grid-container .item:disabled {
@@ -87,24 +91,26 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
   transition: all 300ms ease;
-  border: 0.7px solid #858585;
+  border: 0.5px solid #9c9c9c;
   font-size: 1rem;
   cursor: pointer;
-  /* background: #2d2c2c;
-  color: #e1e1e1; */
   color: #2d2c2c;
   background: #e1e1e1;
 }
 
-/* .complete button:hover,
-.progress select:hover {
-  background: #000000;
-} */
+.grid-container .item.correct.selected {
+  background: #5db05d;
+  box-shadow: inset 0 0 0 2px #5db05d;
+}
+
+.grid-container .item.incorrect.selected {
+  background: #c95353;
+}
 
 .grid-container .item.correct {
-  background: #5db05d;
+  box-shadow: inset 0 0 0 2px #5db05d;
 }
 
 .grid-container .item.incorrect {
-  background: #c95353;
+  box-shadow: inset 0 0 0 2px #c95353;
 }
