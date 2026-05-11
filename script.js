@@ -166,7 +166,7 @@ function resetState() {
 function handleSubmit(){
   const buttons = Array.from(answerButtons.children);
   const selectedCorrect = buttons.filter(btn => btn.classList.contains("selected")
-  && btn.dataset.correct === "true").length;
+  && btn.dataset.correct).length; //!!!!!!!!!!!!!!!!!!!
   const selectedIncorrect = buttons.filter(btn => btn.classList.contains("selected")
   && btn.dataset.correct !== "true").length;
   
