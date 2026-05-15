@@ -1,6 +1,7 @@
 const questions = [
   {
-    question: "Which planet in the Solar System rotates on its side (its axis is tilted by more than 90 degrees)?",
+    question:
+      "Which planet in the Solar System rotates on its side (its axis is tilted by more than 90 degrees)?",
     answers: [
       { text: "Jupiter", correct: false },
       { text: "Saturn", correct: false },
@@ -9,7 +10,7 @@ const questions = [
     ],
   },
   {
-    question: "In which country was the popular dessert \"Pavlova\" invented?",
+    question: 'In which country was the popular dessert "Pavlova" invented?',
     answers: [
       { text: "Russia", correct: false },
       { text: "New Zealand", correct: true },
@@ -18,7 +19,8 @@ const questions = [
     ],
   },
   {
-    question: "Which chemical element makes up more than 75% of the mass of the observable universe?",
+    question:
+      "Which chemical element makes up more than 75% of the mass of the observable universe?",
     answers: [
       { text: "Helium", correct: false },
       { text: "Oxygen", correct: false },
@@ -72,7 +74,8 @@ const questions = [
     ],
   },
   {
-    question: "Which organ in the human body consumes about 20% of the body's total energy?",
+    question:
+      "Which organ in the human body consumes about 20% of the body's total energy?",
     answers: [
       { text: "Heart", correct: false },
       { text: "Liver", correct: false },
@@ -90,13 +93,13 @@ const questions = [
     ],
   },
   {
-    question: "multiple?",
+    question: "Which of the following countries are part of Scandinavia?",
     answers: [
-      { text: "Philippine Trench", correct: false },
-      { text: "Greenland Sea", correct: false },
-      { text: "Lomonosov Ridge", correct: true },
-      { text: "Challenger Deep", correct: true },
-      { text: "Challenger Deep", correct: true },
+      { text: "Norway", correct: true },
+      { text: "Denmark", correct: true },
+      { text: "Sweden", correct: true },
+      { text: "Italy", correct: false },
+      { text: "Brazil", correct: false },
     ],
   },
 ];
@@ -119,7 +122,7 @@ function startQuiz() {
 function showQuestion(questionData) {
   resetState();
   questionElement.innerHTML = questionData.question;
-  maxSelections = questionData.answers.filter(a => a.correct).length;
+  maxSelections = questionData.answers.filter((a) => a.correct).length;
 
   questionData.answers.forEach((answer) => {
     const button = document.createElement("button");
@@ -139,13 +142,16 @@ function showQuestion(questionData) {
 }
 
 function handleSelection(button) {
-  const selectedButtons = Array.from(answerButtons.querySelectorAll(".selected"));
+  const selectedButtons = Array.from(
+    answerButtons.querySelectorAll(".selected"),
+  );
 
   if (maxSelections === 1) {
-    answerButtons.querySelectorAll(".selected").forEach(btn => btn.classList.remove("selected"));
+    answerButtons
+      .querySelectorAll(".selected")
+      .forEach((btn) => btn.classList.remove("selected"));
     button.classList.add("selected");
-  } 
-  else {
+  } else {
     if (button.classList.contains("selected")) {
       button.classList.remove("selected");
     } else if (selectedButtons.length < maxSelections) {
@@ -163,37 +169,40 @@ function resetState() {
   }
 }
 
-function handleSubmit(){
+function handleSubmit() {
   const buttons = Array.from(answerButtons.children);
-  const selectedCorrect = buttons.filter(btn => btn.classList.contains("selected")
-  && btn.dataset.correct).length; //!!!!!!!!!!!!!!!!!!!
-  const selectedIncorrect = buttons.filter(btn => btn.classList.contains("selected")
-  && btn.dataset.correct !== "true").length;
-  
-  if(selectedCorrect === maxSelections && selectedIncorrect === 0){
+  const selectedCorrect = buttons.filter(
+    (btn) => btn.classList.contains("selected") && btn.dataset.correct,
+  ).length; //!!!!!!!!!!!!!!!!!!!
+  const selectedIncorrect = buttons.filter(
+    (btn) =>
+      btn.classList.contains("selected") && btn.dataset.correct !== "true",
+  ).length;
+
+  if (selectedCorrect === maxSelections && selectedIncorrect === 0) {
     score++;
   }
-  
-  buttons.forEach(button => {
+
+  buttons.forEach((button) => {
     const isCorrect = button.dataset.correct === "true";
     const isSelected = button.classList.contains("selected");
-    
-    if(isCorrect){
+
+    if (isCorrect) {
       button.classList.add("correct");
     }
-    if(isSelected && !isCorrect) {
+    if (isSelected && !isCorrect) {
       button.classList.add("incorrect");
     }
-    
+
     button.disabled = true;
   });
-  
+
   nextButton.innerHTML = "Next";
 }
 
 function handleNextButton() {
   currentQuestionIndex++;
-  
+
   if (currentQuestionIndex < questions.length) {
     showQuestion(questions[currentQuestionIndex]);
   } else {
@@ -208,10 +217,9 @@ function showScore() {
 }
 
 nextButton.addEventListener("click", () => {
-  if(nextButton.innerHTML === "Submit"){
+  if (nextButton.innerHTML === "Submit") {
     handleSubmit();
-  }
-  else if (nextButton.innerHTML === "Next") {
+  } else if (nextButton.innerHTML === "Next") {
     handleNextButton();
   } else {
     startQuiz();
